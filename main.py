@@ -1,2 +1,0 @@
-print("blôabla")
-print("ano")
