@@ -1,0 +1,20 @@
+[
+    {
+        "id" : 4,
+        "name": "PS4",
+        "description": "PlayStation 4",
+        "price" : 59.99
+    },
+    {
+        "id" : 5,
+        "name": "PS5",
+        "description": "PlayStation 5",
+        "price" : 59.99
+    },
+    {        
+        "id" : 6,
+        "name": "XBOX",
+        "description": "XBOX konzola",
+        "price" : 59.99
+    }
+]

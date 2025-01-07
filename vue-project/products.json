@@ -1,0 +1,20 @@
+[
+    {
+        "id" : 1,
+        "name": "Herné slúchadlá",
+        "description": "Slúchadlá s kvalitným zvukom a mikrofónom.",
+        "price" : 59.99
+    },
+    {
+        "id" : 2,
+        "name": "Herná klávesnica",
+        "description": "RGB klávesnica s mechanickými klávesmi.",
+        "price" : 59.99
+    },
+    {        
+        "id" : 3,
+        "name": "Herná myš",
+        "description": "Presná herná myš pre náročných hráčov.",
+        "price" : 59.99
+    }
+]

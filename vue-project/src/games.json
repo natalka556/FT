@@ -1,0 +1,20 @@
+[
+    {
+        "id" : 7,
+        "name": "Far Cry 4",
+        "description": "Od Ubisoftu",
+        "price" : 19.99
+    },
+    {
+        "id" : 8,
+        "name": "GTA 5",
+        "description": "Nikdy neomrzí",
+        "price" : 59.99
+    },
+    {        
+        "id" : 9,
+        "name": "Elder Ring",
+        "description": "Fantasy hra",
+        "price" : 59.99
+    }
+]
