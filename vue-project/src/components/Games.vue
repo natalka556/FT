@@ -1,7 +1,7 @@
 <template>
     <div>
-      <h1>Herné Konzoly</h1>
-      <p>Vyberte si svoju obľúbenú hernú konzolu.</p>
+      <h1>Hry</h1>
+      <p>Vyberte si svoju obľúbenú hru.</p>
   
       <div class="products-grid">
         <div class="product" v-for="game in games" :key="game.id">
