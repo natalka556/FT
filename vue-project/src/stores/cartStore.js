@@ -5,6 +5,9 @@ export const useCartStore = defineStore('cart', {
     items: JSON.parse(localStorage.getItem('cartItems')) || [],  // Load cart items from localStorage
     products: [],  // Holds products loaded from products.json
     consoles: [],  // Holds consoles loaded from consoles.json
+    games: [],  // Holds games loaded from games.json
+    pcs: [],  // Holds pcs loaded from pc.json
+    actions: [],
   }),
 
   actions: {
@@ -27,33 +30,63 @@ export const useCartStore = defineStore('cart', {
     // Load consoles from consoles.json (for console-specific pages)
     async loadConsoles() {
       try {
-        const response = await fetch('/consoles.json');  // Adjust path to the location of consoles.json
+        const response = await fetch('/consoles.json');  // Adjust path to the location of products.json
         const data = await response.json();
-        console.log("Fetched consoles:", data);  // Debugging output
+        console.log("Fetched products:", data);  // Debugging output
 
-        this.consoles = data.map(consoleItem => ({
-          ...consoleItem,
-          image: `/images/${consoleItem.name.toLowerCase().replace(/\s+/g, '-')}.jpg`,  // Adjust image path
+        this.consoles = data.map(console => ({
+          ...console,
+          image: `/images/${console.name.toLowerCase().replace(/\s+/g, '-')}.jpg`,  // Adjust image path
         }));
       } catch (error) {
-        console.error("Error fetching consoles:", error);
+        console.error("Error fetching products:", error);
       }
     },
 
     async loadGames() {
-        try {
-          const response = await fetch('/games.json');  // Adjust path to the location of consoles.json
-          const data = await response.json();
-          game.log("Fetched games:", data);  // Debugging output
-  
-          this.games = data.map(gameItem => ({
-            ...gameItem,
-            image: `/images/${gameItem.name.toLowerCase().replace(/\s+/g, '-')}.jpg`,  // Adjust image path
-          }));
-        } catch (error) {
-          game.error("Error fetching games:", error);
-        }
-      },
+      try {
+        const response = await fetch('/games.json');  // Adjust path to the location of products.json
+        const data = await response.json();
+        console.log("Fetched products:", data);  // Debugging output
+
+        this.games = data.map(game => ({
+          ...game,
+          image: `/images/${game.name.toLowerCase().replace(/\s+/g, '-')}.jpg`,  // Adjust image path
+        }));
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
+    },
+
+    async loadPcs() {
+      try {
+        const response = await fetch('/pc.json');  // Adjust path to the location of products.json
+        const data = await response.json();
+        console.log("Fetched products:", data);  // Debugging output
+
+        this.pcs = data.map(pc => ({
+          ...pc,
+          image: `/images/${pc.name.toLowerCase().replace(/\s+/g, '-')}.jpg`,  // Adjust image path
+        }));
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
+    },
+
+    async loadActions() {
+      try {
+        const response = await fetch('/actions.json');  // Adjust path to the location of products.json
+        const data = await response.json();
+        console.log("Fetched products:", data);  // Debugging output
+
+        this.actions = data.map(action => ({
+          ...action,
+          image: `/images/${action.name.toLowerCase().replace(/\s+/g, '-')}.jpg`,  // Adjust image path
+        }));
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
+    },
 
     // Add product to the cart
     addItem(productId) {
@@ -76,17 +109,17 @@ export const useCartStore = defineStore('cart', {
 
     // Add console to the cart
     addConsole(consoleId) {
-      const consoleItem = this.consoles.find(item => item.id === consoleId);  // Find console by ID
-      if (!consoleItem) {
-        console.error("Console not found:", consoleId);
+      const console = this.consoles.find(item => item.id === consoleId);  // Find product by ID
+      if (!console) {
+        console.error("Product not found:", consoleId);
         return;
       }
 
-      const existingItem = this.items.find(item => item.id === consoleItem.id);
+      const existingItem = this.items.find(item => item.id === console.id);
       if (existingItem) {
-        existingItem.quantity++;  // If the console exists, increment the quantity
+        existingItem.quantity++;  // If the product exists, increment the quantity
       } else {
-        this.items.push({ ...consoleItem, quantity: 1 });  // Otherwise, add the console with quantity 1
+        this.items.push({ ...console, quantity: 1 });  // Otherwise, add the product with quantity 1
       }
 
       this.saveCart();  // Save updated cart to localStorage
@@ -94,22 +127,58 @@ export const useCartStore = defineStore('cart', {
     },
 
     addGame(gameId) {
-        const gameItem = this.games.find(item => item.id === gameId);  // Find console by ID
-        if (!gameItem) {
-          game.error("Game not found:", gameId);
-          return;
-        }
-  
-        const existingItem = this.items.find(item => item.id === gameItem.id);
-        if (existingItem) {
-          existingItem.quantity++;  // If the console exists, increment the quantity
-        } else {
-          this.items.push({ ...gameItem, quantity: 1 });  // Otherwise, add the console with quantity 1
-        }
-  
-        this.saveCart();  // Save updated cart to localStorage
-        console.log("Updated cart items:", this.items);  // Debugging output
-      },
+      const game = this.games.find(item => item.id === gameId);  // Find product by ID
+      if (!game) {
+        console.error("Product not found:", gameId);
+        return;
+      }
+
+      const existingItem = this.items.find(item => item.id === game.id);
+      if (existingItem) {
+        existingItem.quantity++;  // If the product exists, increment the quantity
+      } else {
+        this.items.push({ ...game, quantity: 1 });  // Otherwise, add the product with quantity 1
+      }
+
+      this.saveCart();  // Save updated cart to localStorage
+      console.log("Updated cart items:", this.items);  // Debugging output
+    },
+
+    addPc(pcId) {
+      const pc = this.pcs.find(item => item.id === pcId);  // Find product by ID
+      if (!pc) {
+        pc.error("Product not found:", pcId);
+        return;
+      }
+
+      const existingItem = this.items.find(item => item.id === pc.id);
+      if (existingItem) {
+        existingItem.quantity++;  // If the product exists, increment the quantity
+      } else {
+        this.items.push({ ...pc, quantity: 1 });  // Otherwise, add the product with quantity 1
+      }
+
+      this.saveCart();  // Save updated cart to localStorage
+      console.log("Updated cart items:", this.items);  // Debugging output
+    },
+
+    addAction(actionId) {
+      const action = this.actions.find(item => item.id === actionId);  // Find product by ID
+      if (!action) {
+        action.error("Product not found:", pcId);
+        return;
+      }
+
+      const existingItem = this.items.find(item => item.id === action.id);
+      if (existingItem) {
+        existingItem.quantity++;  // If the product exists, increment the quantity
+      } else {
+        this.items.push({ ...action, quantity: 1 });  // Otherwise, add the product with quantity 1
+      }
+
+      this.saveCart();  // Save updated cart to localStorage
+      console.log("Updated cart items:", this.items);  // Debugging output
+    },
 
     // Remove item from the cart
     removeItem(itemId) {

@@ -1,0 +1,20 @@
+[
+    {
+        "id" : 10,
+        "name": "HP",
+        "description": "PlayStation 4",
+        "price" : 659.99
+    },
+    {
+        "id" : 11,
+        "name": "ASUS",
+        "description": "PlayStation 5",
+        "price" : 959.99
+    },
+    {        
+        "id" : 12,
+        "name": "ACER",
+        "description": "XBOX konzola",
+        "price" : 759.99
+    }
+]

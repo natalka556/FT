@@ -1,0 +1,20 @@
+[
+    {
+        "id" : 13,
+        "name": "Far Cry 3",
+        "description": "Od Ubisoftu",
+        "price" : 6.99
+    },
+    {
+        "id" : 14,
+        "name": "HP",
+        "description": "Notebook HP",
+        "price" : 329.99
+    },
+    {        
+        "id" : 15,
+        "name": "Herná myš",
+        "description": "RGB herná myš",
+        "price" : 29.99
+    }
+]

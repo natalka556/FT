@@ -4,6 +4,8 @@ import Accessories from '../components/Accessories.vue'
 import Cart from '../components/Cart.vue'
 import Consoles from '../components/Consoles.vue'
 import Games from '../components/Games.vue'
+import Pc from '../components/Pc.vue'
+import Actions from '../components/Actions.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -37,6 +39,16 @@ const router = createRouter({
       path: '/games', 
       name: 'games',
       component: Games, 
+    },
+    {
+      path: '/pc', 
+      name: 'pc',
+      component: Pc, 
+    },
+    {
+      path: '/actions', 
+      name: 'actions',
+      component: Actions, 
     },
   ],
 })

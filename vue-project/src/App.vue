@@ -15,6 +15,7 @@
     </nav>
   </header>
 
+
   <RouterView />
 
 
@@ -22,6 +23,7 @@
 </template>
 
 <style scoped>
+
 /* Header style with navigation */
 header {
   line-height: 1.5;
@@ -30,12 +32,13 @@ header {
   justify-content: space-between;
   align-items: center;
   background-color: #dd5858;
-  padding: 10px 20px;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
   border-radius: 25px;
+  padding: 0;
+  margin: 0;
 }
 
 .logo {

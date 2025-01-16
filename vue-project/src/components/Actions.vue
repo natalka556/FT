@@ -1,15 +1,15 @@
 <template>
     <div class="accessories-page">
-      <h1>Hry</h1>
-      <p>Vyberte si svoju obľúbenú hru.</p>
+      <h1>AKCIE</h1>
+      <p>Všetky produkty, ktoré máme v akcii.</p>
   
       <div class="products-grid">
-        <div class="product" v-for="game in games" :key="game.id">
-          <img :src="game.image" :alt="game.name" />
-          <h3>{{ game.name }}</h3>
-          <p>{{ game.description }}</p>
-          <p class="price">{{ game.price }} €</p>
-          <button @click="addToCart(game.id)">Pridať do košíka</button>
+        <div class="product" v-for="action in actions" :key="action.id">
+          <img :src="action.image" :alt="action.name" />
+          <h3>{{ action.name }}</h3>
+          <p>{{ action.description }}</p>
+          <p class="price">{{ action.price }} €</p>
+          <button @click="addToCart(action.id)">Pridať do košíka</button>
         </div>
       </div>
     </div>
@@ -19,29 +19,28 @@
   import { useCartStore } from '../stores/cartStore';
   
   export default {
-    name: 'Games',
+    name: 'Actions',
     data() {
       return {};
     },
     computed: {
-      games() {
+      actions() {
         const cartStore = useCartStore();
-        return cartStore.games;  // Access the products loaded from the JSON file
+        return cartStore.actions;  // Access the products loaded from the JSON file
       },
     },
     methods: {
-      async addToCart(gameId) {
+      async addToCart(actionId) {
         const cartStore = useCartStore();
-        cartStore.addGame(gameId);  // Add the product to the cart using its ID
+        cartStore.addAction(actionId);  // Add the product to the cart using its ID
       },
     },
     created() {
       const cartStore = useCartStore();
-      cartStore.loadGames();  // Load product data when the component is created
+      cartStore.loadActions();  // Load product data when the component is created
     },
   };
   </script>
-
 
 <style scoped>
 /* General Page Styling */
@@ -176,5 +175,4 @@
   transform: scale(0.98);
 }
 </style>
-
-
+  

@@ -1,14 +1,11 @@
 <template>
-  <div class="home-page">
+  <div class="accessories-page">
     <!-- Hero Section -->
     <section class="hero">
       <h1>Vitajte na eshope s hernými potrebami</h1>
       <p>Najlepšie produkty pre vašich herných hrdinov</p>
       <button @click="navigateToShop">Pozrite si ponuku</button>
     </section>
-
-    <!-- Featured Products Section -->
-    
 
     <!-- About Section -->
     <section class="about">
@@ -28,31 +25,42 @@
 <script>
 export default {
   name: 'HomeView',
-  
 };
 </script>
 
 <style scoped>
-.home-page {
-  font-family: 'Arial', sans-serif;
-  background-color: #f8f9fa;
-  padding: 0 20px;
-  margin: 0;
+/* General Page Styling */
+.accessories-page {
+  position: absolute;
+  top: 10%;
+  left: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  background: linear-gradient(to bottom, #da6767, #fff); /* Red gradient background */
+  padding: 30px;
+  text-align: center;
+  width: 100%;
+  height: 100vh; /* Full height of the viewport */
+  box-sizing: border-box;
 }
 
-.hero {
-  background: linear-gradient(135deg, #ff7f50, #ff6347);
-  color: white;
+.accessories-page * {
+  margin: 0;
+  padding: 0;
   text-align: center;
-  padding: 100px 20px;
-  border-radius: 8px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Hero Section Styling */
+.hero {
+  color: white;
+  margin-bottom: 50px;
 }
 
 .hero h1 {
   font-size: 3.5em;
   margin-bottom: 20px;
-  font-weight: 600;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .hero p {
@@ -62,7 +70,7 @@ export default {
 
 .hero button {
   padding: 12px 25px;
-  background-color: #333;
+  background: linear-gradient(to right, #ff0000, #e60000);
   color: white;
   border: none;
   border-radius: 5px;
@@ -72,112 +80,50 @@ export default {
 }
 
 .hero button:hover {
-  background-color: #555;
+  background-color: #b30000;
 }
 
-.featured-products {
-  margin-top: 60px;
-  text-align: center;
-}
-
-.featured-products h2 {
-  font-size: 2.5em;
-  margin-bottom: 40px;
-  font-weight: 600;
-}
-
-.products-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.product {
-  background-color: white;
+/* About and Contact Section Styling */
+.about, .contact {
+  margin-top: 50px;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.product:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
-}
-
-.product img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
-
-.product h3 {
-  font-size: 1.5em;
-  margin-top: 15px;
+  background: #fff;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
   color: #333;
-}
-
-.product p {
-  font-size: 1.1em;
-  margin: 10px 0;
-  color: #555;
-}
-
-.product .price {
-  font-size: 1.3em;
-  color: #ff6347;
-  font-weight: 600;
-  margin: 10px 0;
-}
-
-.product button {
-  padding: 10px 20px;
-  background-color: #ff6347;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 1.1em;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  width: 100%;
-}
-
-.product button:hover {
-  background-color: #ff7f50;
-}
-
-.about, .contact {
-  margin-top: 80px;
-  text-align: center;
 }
 
 .about h2, .contact h2 {
   font-size: 2.5em;
   margin-bottom: 20px;
-  font-weight: 600;
-  color: #333;
+  font-weight: 700;
 }
 
 .about p, .contact p {
   font-size: 1.2em;
+  line-height: 1.6;
   color: #555;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
-.about button, .contact button {
+.contact button, .about button {
   padding: 12px 25px;
-  background-color: #333;
+  background: linear-gradient(to right, #ff0000, #e60000);
   color: white;
   border: none;
   border-radius: 5px;
   font-size: 1.1em;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
-.about button:hover, .contact button:hover {
-  background-color: #555;
+.contact button:hover, .about button:hover {
+  background: #b30000;
 }
+
+/* Additional Styling for Consistency */
+section {
+  margin-bottom: 30px;
+}
+
 </style>
