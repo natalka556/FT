@@ -1,20 +1,44 @@
 [
     {
-        "id" : 7,
+        "id" : 8,
         "name": "Far Cry 4",
         "description": "Od Ubisoftu",
         "price" : 19.99
     },
     {
-        "id" : 8,
+        "id" : 9,
         "name": "GTA 5",
         "description": "Nikdy neomrzí",
         "price" : 59.99
     },
     {        
-        "id" : 9,
+        "id" : 10,
         "name": "Elder Ring",
         "description": "Fantasy hra",
         "price" : 59.99
+    },
+    {
+        "id" : 11,
+        "name": "GTA 1",
+        "description": "Nikdy neomrzí",
+        "price" : 69.99
+    },
+    {
+        "id" : 12,
+        "name": "GTA 2",
+        "description": "Nikdy neomrzí",
+        "price" : 9.99
+    },
+    {
+        "id" : 13,
+        "name": "GTA 3",
+        "description": "Nikdy neomrzí",
+        "price" : 39.99
+    },
+    {
+        "id" : 14,
+        "name": "GTA 4",
+        "description": "Nikdy neomrzí",
+        "price" : 29.99
     }
 ]

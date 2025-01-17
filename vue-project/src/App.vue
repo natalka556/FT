@@ -1,11 +1,10 @@
-<script setup>
-</script>
+
 
 <template>
   <!-- Navigation Bar at the Top -->
   <header>
     <nav>
-      <RouterLink to="/home">Home</RouterLink>     
+      <RouterLink to="/home">Domov</RouterLink>     
       <RouterLink to="/actions">Akcie</RouterLink>      
       <RouterLink to="/pc">PC</RouterLink>
       <RouterLink to="/consoles">Herné konzoly</RouterLink>

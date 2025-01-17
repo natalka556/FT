@@ -16,31 +16,50 @@
   </template>
   
   <script>
+  // Import the `useCartStore` store for managing cart and product data
   import { useCartStore } from '../stores/cartStore';
-  
+
   export default {
+    // Name of the component, useful for debugging and Vue DevTools
     name: 'Pcs',
+
+    // Component data function, currently empty as no specific data is needed here
     data() {
       return {};
     },
+
+    // Computed properties for reactive data
     computed: {
+      // Computed property to access PCs loaded in the cart store
       pcs() {
+        // Access the cart store instance
         const cartStore = useCartStore();
-        return cartStore.pcs;  // Access the products loaded from the JSON file
+        // Return the `pcs` array from the store
+        return cartStore.pcs; // This contains PCs loaded from `pc.json`
       },
     },
+
+    // Methods for user interactions or actions
     methods: {
+      // Method to add a PC to the cart by its ID
       async addToCart(pcId) {
+        // Access the cart store instance
         const cartStore = useCartStore();
-        cartStore.addPc(pcId);  // Add the product to the cart using its ID
+        // Call the `addPc` method in the store to add the PC to the cart
+        cartStore.addPc(pcId);
       },
     },
+
+    // Lifecycle hook that runs when the component is created
     created() {
+      // Access the cart store instance
       const cartStore = useCartStore();
-      cartStore.loadPcs();  // Load product data when the component is created
+      // Load the PCs from `pc.json` when the component is created
+      cartStore.loadPcs();
     },
   };
-  </script>
+</script>
+
   
 <style scoped>
   /* General Page Styling */

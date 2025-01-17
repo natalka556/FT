@@ -1,20 +1,44 @@
 [
     {
-        "id" : 13,
+        "id" : 29,
         "name": "Far Cry 3",
         "description": "Od Ubisoftu",
         "price" : 6.99
     },
     {
-        "id" : 14,
+        "id" : 30,
         "name": "HP",
         "description": "Notebook HP",
         "price" : 329.99
     },
     {        
-        "id" : 15,
+        "id" : 31,
         "name": "Herná myš",
         "description": "RGB herná myš",
         "price" : 29.99
+    },
+    {
+        "id" : 32,
+        "name": "Far Cry 3",
+        "description": "Od Ubisoftu",
+        "price" : 66.99
+    },
+    {
+        "id" : 33,
+        "name": "Far Cry 3",
+        "description": "Od Ubisoftu",
+        "price" : 16.99
+    },
+    {
+        "id" : 34,
+        "name": "Far Cry 3",
+        "description": "Od Ubisoftu",
+        "price" : 46.99
+    },
+    {
+        "id" : 35,
+        "name": "Far Cry 3",
+        "description": "Od Ubisoftu",
+        "price" : 56.99
     }
 ]

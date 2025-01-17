@@ -15,7 +15,7 @@
     </div>
   </template>
   
-  <script>
+<script>
   import { useCartStore } from '../stores/cartStore';
   
   export default {
@@ -40,7 +40,7 @@
       cartStore.loadGames();  // Load product data when the component is created
     },
   };
-  </script>
+</script>
 
 
 <style scoped>

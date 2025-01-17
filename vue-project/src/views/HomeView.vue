@@ -15,18 +15,35 @@
 
     <!-- Contact Section -->
     <section class="contact">
-      <h2>Kontaktujte nás</h2>
-      <p>Máte nejaké otázky? Neváhajte nás kontaktovať!</p>
-      <button @click="navigateToContact">Kontaktovať nás</button>
-    </section>
+  <h2>Kontaktujte nás</h2>
+  <p>Máte nejaké otázky? Neváhajte nás kontaktovať!</p>
+  <button @click="showContactInfo">Kontaktovať nás</button>
+</section>
+
   </div>
 </template>
 
 <script>
 export default {
+  // The name of the component, useful for debugging and identifying it in Vue DevTools
   name: 'HomeView',
+
+  // Define the methods that can be used in the template or component
+  methods: {
+    // Method to display contact information
+    showContactInfo() {
+      // Show an alert dialog with the contact number
+      alert("Tel.č: +421948123456");
+    },
+    // Method to navigate the user to the "Actions" page
+    navigateToShop() {
+      // Use Vue Router's `push` method to programmatically navigate to the "/actions" route
+      this.$router.push("/actions");
+    },
+  },
 };
 </script>
+
 
 <style scoped>
 /* General Page Styling */

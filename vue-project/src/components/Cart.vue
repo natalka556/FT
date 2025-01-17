@@ -1,4 +1,4 @@
-<template>
+<template> 
   <div class="accessories-page">
     <h1>Váš Košík</h1>
     <div class="cart-container">
@@ -12,6 +12,8 @@
           </li>
         </ul>
         <p class="cart-total">Celková cena: €{{ totalPrice }}</p>
+        <button @click="confirmOrder" class="confirm-button">Potvrdiť objednávku</button>
+        
       </div>
       <div v-else>
         <p>Váš košík je prázdny.</p>
@@ -21,34 +23,56 @@
 </template>
 
 <script>
-import { useCartStore } from '../stores/cartStore';
+import { useCartStore } from '../stores/cartStore'; // Import the cart store for managing cart-related data and actions
+import { useRouter } from 'vue-router'; // Import Vue Router for navigation
 
 export default {
+  // Define the component name for debugging and Vue DevTools
   name: 'Cart',
+
+  // Reactive data properties
   data() {
     return {
-      cartStore: useCartStore(), // Access cart store
+      // Create an instance of the cart store for accessing its state and actions
+      cartStore: useCartStore(),
+      // Create an instance of Vue Router for navigation
+      router: useRouter(),
     };
   },
+
+  // Computed properties for reactive data derived from the store
   computed: {
+    // Get the list of items in the cart
     cartItems() {
-      return this.cartStore.items; // Access cart items
+      return this.cartStore.items;
     },
+    // Get the total price of all items in the cart
     totalPrice() {
-      return this.cartStore.totalPrice; // Access total price
+      return this.cartStore.totalPrice;
     },
   },
+
+  // Methods for handling user interactions
   methods: {
+    // Remove an item from the cart by its ID
     removeItem(itemId) {
-      this.cartStore.removeItem(itemId); // Remove item from cart
+      this.cartStore.removeItem(itemId); // Call the `removeItem` method from the store
+    },
+    // Navigate to the order confirmation page
+    confirmOrder() {
+      this.router.push('/order'); // Use Vue Router to navigate to the `/order` route
     },
   },
+
+  // Lifecycle hook that runs when the component is created
   created() {
+    // Load products and consoles when the component is initialized
     this.cartStore.loadProducts();
     this.cartStore.loadConsoles();
   },
 };
 </script>
+
 
 <style scoped>
 /* General Page Styling */
@@ -129,4 +153,34 @@ export default {
   margin-top: 20px;
   text-align: right;
 }
+
+.confirm-button {
+  background: linear-gradient(to right, #c40404, #ff0000);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 15px;
+  margin-left: auto;
+  display: block;
+  text-align: right;
+  align-items: right;
+}
+
+.confirm-button:hover {
+  background: linear-gradient(to right, #df6b6bad, #f83535);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.confirm-button:active {
+  background: #bb5151;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transform: translateY(2px);
+}
 </style>
+

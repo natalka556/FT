@@ -1,20 +1,44 @@
 [
     {
-        "id" : 4,
+        "id" : 15,
         "name": "PS4",
         "description": "PlayStation 4",
-        "price" : 59.99
+        "price" : 159.99
     },
     {
-        "id" : 5,
+        "id" : 16,
         "name": "PS5",
         "description": "PlayStation 5",
-        "price" : 59.99
+        "price" : 659.99
     },
     {        
-        "id" : 6,
+        "id" : 17,
         "name": "XBOX",
         "description": "XBOX konzola",
         "price" : 59.99
+    },
+    {        
+        "id" : 18,
+        "name": "PS 1",
+        "description": "PS konzola",
+        "price" : 259.99
+    },
+    {        
+        "id" : 19,
+        "name": "PS2",
+        "description": "Ps konzola",
+        "price" : 359.99
+    },
+    {        
+        "id" : 20,
+        "name": "PS3",
+        "description": "PS konzola",
+        "price" : 459.99
+    },
+    {        
+        "id" : 21,
+        "name": "PS vita",
+        "description": "PS konzola",
+        "price" : 559.99
     }
 ]

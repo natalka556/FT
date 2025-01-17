@@ -15,28 +15,28 @@
         "id" : 3,
         "name": "Herná myš",
         "description": "Presná herná myš pre náročných hráčov.",
+        "price" :69.99
+    },
+    {        
+        "id" : 4,
+        "name": "Herná myš",
+        "description": "Presná herná myš pre náročných hráčov.",
+        "price" : 45.99
+    },
+    {        
+        "id" : 5,
+        "name": "Herná myš",
+        "description": "Presná herná myš pre náročných hráčov.",
+        "price" : 55.99
+    },
+    {        
+        "id" : 6,
+        "name": "Herná myš",
+        "description": "Presná herná myš pre náročných hráčov.",
         "price" : 59.99
     },
     {        
-        "id" : 16,
-        "name": "Herná myš",
-        "description": "Presná herná myš pre náročných hráčov.",
-        "price" : 4559.99
-    },
-    {        
-        "id" : 17,
-        "name": "Herná myš",
-        "description": "Presná herná myš pre náročných hráčov.",
-        "price" : 5559.99
-    },
-    {        
-        "id" : 18,
-        "name": "Herná myš",
-        "description": "Presná herná myš pre náročných hráčov.",
-        "price" : 4459.99
-    },
-    {        
-        "id" : 19,
+        "id" : 7,
         "name": "Herná myš",
         "description": "Presná herná myš pre náročných hráčov.",
         "price" : 5559.99
